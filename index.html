@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SokoTech Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- task bar -->
+    <header id="top">
+        <div class="brand">
+            <span class="brand-mark">S</span>
+            <div>
+                <h1>SokoTech</h1>
+                <p>Smart tech for everyday life</p>
+            </div>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-controls="navMain" aria-expanded="false">
+            <span></span><span></span><span></span>
+            <span class="sr-only">Open navigation menu</span>
+        </button>
+        <nav id="navMain" aria-label="Main navigation">
+            <a class="active" href="#top">Home</a>
+            <a href="#about">Features</a>
+            <a href="#product">Pricing</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="nav-actions">
+            <a class="login-link" href="#contact">Log in</a>
+            <a class="signup-link" href="#product">Sign up</a>
+        </div>
+    </header>
+
+    <!-- Assignment 1: The Landing Page and Single Product -->
+    <main>
+        <section class="intro" id="about">
+            <p class="eyebrow">Featured pick</p>
+            <h2>Upgrade your setup.</h2>
+            <p>Thoughtfully selected technology that helps you work, create, and connect with ease.</p>
+        </section>
+
+    <div class="product-card" id="product">
+        <div class="product-image">
+     <!-- import image -->
+      <img src="https://tse4.mm.bing.net/th/id/OIP.qtVjMTlQcGWHZJl82i-aCgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mechanical Coding Keyboard">
+        </div>
+        <div class="product-details">
+            <span class="category">Work essentials</span>
+            <h2 class="product-title">Mechanical Coding Keyboard</h2>
+        <p class="product-desc">Tactile blue switches for maximum typing feedback and speed.</p>
+        <div class="purchase-row">
+        <p class="price">KSh 4,500</p>
+        
+        <!-- Assignment 3: Using the onclick attribute -->
+        <button class="btn" onclick="addToCart()">Add to Cart</button>
+        </div>
+        
+        <div id="cart-status"></div>
+        </div>
+    </div>
+    </main>
+
+    <footer id="contact">
+        <p>Reliable tech. Simple shopping.</p>
+        <p>Contact us at info@sokotech.com</p>
+        <!-- copyright -->
+        <p>&copy; 2026 SokoTech Marketplace. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
