@@ -26,25 +26,27 @@
             <a href="#about">Features</a>
             <a href="#product">Pricing</a>
             <a href="#about">About</a>
+            <a href="#">view Cart</a>
         </nav>
         <div class="nav-actions">
             <a class="login-link" href="#contact">Log in</a>
             <a class="signup-link" href="#product">Sign up</a>
         </div>
     </header>
- <section class="catalog" aria-labelledby="catalog-title">
+
+    <main>
+        <section class="catalog" aria-labelledby="catalog-title">
             <div class="catalog-heading">
                 <div>
                     <p class="eyebrow">Browse the collection</p>
                     <h2 id="catalog-title">Find your essential</h2>
                 </div>
-                <p id="product-count" class="product-count" aria-live="polite">1 product</p>
+                <p id="product-count" class="product-count" aria-live="polite">2 products</p>
             </div>
 
             <form class="product-filters" role="search" onsubmit="return false">
                 <label class="search-field" for="product-search">
                     <span class="sr-only">Search products</span>
-                    <span aria-hidden="true"></span>
                     <input id="product-search" type="search" placeholder="Search products" autocomplete="off">
                 </label>
                 <label class="filter-field" for="category-filter">
@@ -52,17 +54,16 @@
                     <select id="category-filter">
                         <option value="all">All categories</option>
                         <option value="work essentials">Work essentials</option>
+                        <option value="study gear">Study gear</option>
                     </select>
                 </label>
             </form>
 
             <p id="no-results" class="no-results" hidden>No products match your search.</p>
         </section>
-   
-     <main>
 
- <!-- product section -->
-    <div class="product-card" id="product">
+        <div class="product-grid">
+    <div class="product-card" id="product" data-product-title="mechanical coding keyboard" data-product-category="work essentials" data-product-description="tactile blue switches for maximum typing feedback and speed">
         <div class="product-image">
      <!-- import image -->
       <img src="https://tse4.mm.bing.net/th/id/OIP.qtVjMTlQcGWHZJl82i-aCgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mechanical Coding Keyboard">
@@ -76,12 +77,29 @@
 
         
         <!-- Assignment 3: Using the onclick attribute -->
-        <button class="btn" onclick="addToCart()">Add to Cart</button>
+        <button class="btn" onclick="addToCart(this)">Add to Cart</button>
         </div>
         
         <div id="cart-status"></div>
         </div>
     </div>
+
+    <div class="product-card" data-product-title="ergonomic wireless mouse" data-product-category="study gear" data-product-description="quiet clicks and comfortable wireless control for long study sessions">
+        <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=700&q=80" alt="Ergonomic wireless mouse">
+        </div>
+        <div class="product-details">
+            <span class="category">Study gear</span>
+            <h2 class="product-title">Ergonomic Wireless Mouse</h2>
+            <p class="product-desc">Quiet clicks and comfortable wireless control for long study sessions.</p>
+            <div class="purchase-row">
+                <p class="price">KSh 2,800</p>
+                <button class="btn" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="cart-status" aria-live="polite"></div>
+        </div>
+    </div>
+        </div>
     </main>
 
        
@@ -89,7 +107,7 @@
 
     <footer id="contact">
         <p>Reliable tech. Simple shopping.</p>
-        <p>Contact us at info@campusmarket-kirui.com</p>
+        <p>Contact us at tech.kirui254@gmail.com</p>
         <!-- copyright -->
         <p>&copy; Campus Market-Kirui. All rights reserved.</p>
     </footer>

@@ -1,8 +1,9 @@
    let cartCount = 0; // Keeping track of the items
 
-        function addToCart() {
+        function addToCart(button) {
             cartCount++; // Increase the count by 1
-            const statusMessage = document.getElementById('cart-status');
+            const productCard = button.closest('.product-card');
+            const statusMessage = productCard.querySelector('.cart-status, #cart-status');
             statusMessage.innerText = `Success! Added to cart. (Total items: ${cartCount})`;
             console.log(`Item added. Cart currently holds ${cartCount} item(s).`);
         }
@@ -25,20 +26,27 @@
 
         const searchInput = document.getElementById('product-search');
         const categoryFilter = document.getElementById('category-filter');
-        const productCard = document.querySelector('.product-card');
+        const productCards = document.querySelectorAll('.product-card');
         const productCount = document.getElementById('product-count');
         const noResults = document.getElementById('no-results');
 
         function filterProducts() {
             const searchTerm = searchInput.value.trim().toLowerCase();
             const selectedCategory = categoryFilter.value;
-            const matchesSearch = productCard.dataset.productTitle.includes(searchTerm);
-            const matchesCategory = selectedCategory === 'all' || productCard.dataset.productCategory === selectedCategory;
-            const isVisible = matchesSearch && matchesCategory;
+            let visibleCount = 0;
 
-            productCard.hidden = !isVisible;
-            noResults.hidden = isVisible;
-            productCount.textContent = isVisible ? '1 product' : '0 products';
+            productCards.forEach((productCard) => {
+                const searchableText = `${productCard.dataset.productTitle} ${productCard.dataset.productCategory} ${productCard.dataset.productDescription}`;
+                const matchesSearch = searchableText.includes(searchTerm);
+                const matchesCategory = selectedCategory === 'all' || productCard.dataset.productCategory === selectedCategory;
+                const isVisible = matchesSearch && matchesCategory;
+
+                productCard.hidden = !isVisible;
+                if (isVisible) visibleCount++;
+            });
+
+            noResults.hidden = visibleCount > 0;
+            productCount.textContent = `${visibleCount} product${visibleCount === 1 ? '' : 's'}`;
         }
 
         searchInput.addEventListener('input', filterProducts);
