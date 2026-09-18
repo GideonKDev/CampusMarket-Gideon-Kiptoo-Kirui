@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SokoTech Marketplace</title>
+    <title>Campus Market-Kirui</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!-- task bar -->
     <header id="top">
         <div class="brand">
-            <span class="brand-mark">S</span>
+            <span class="brand-mark">C</span>
             <div>
-                <h1>SokoTech</h1>
+                <h1>Campus Market-Kirui</h1>
                 <p>Smart tech for everyday life</p>
             </div>
         </div>
@@ -32,14 +32,36 @@
             <a class="signup-link" href="#product">Sign up</a>
         </div>
     </header>
+ <section class="catalog" aria-labelledby="catalog-title">
+            <div class="catalog-heading">
+                <div>
+                    <p class="eyebrow">Browse the collection</p>
+                    <h2 id="catalog-title">Find your essential</h2>
+                </div>
+                <p id="product-count" class="product-count" aria-live="polite">1 product</p>
+            </div>
 
-    <!-- Assignment 1: The Landing Page and Single Product -->
-    <main>
-        <section class="intro" id="about">
-            <p class="eyebrow">Featured pick</p>
-            <h2>Upgrade your setup.</h2>
-            <p>Thoughtfully selected technology that helps you work, create, and connect with ease.</p>
+            <form class="product-filters" role="search" onsubmit="return false">
+                <label class="search-field" for="product-search">
+                    <span class="sr-only">Search products</span>
+                    <span aria-hidden="true"></span>
+                    <input id="product-search" type="search" placeholder="Search products" autocomplete="off">
+                </label>
+                <label class="filter-field" for="category-filter">
+                    <span class="sr-only">Filter by category</span>
+                    <select id="category-filter">
+                        <option value="all">All categories</option>
+                        <option value="work essentials">Work essentials</option>
+                    </select>
+                </label>
+            </form>
+
+            <p id="no-results" class="no-results" hidden>No products match your search.</p>
         </section>
+   
+     <main>
+        <!-- search for product section -->
+
 
     <div class="product-card" id="product">
         <div class="product-image">
@@ -52,6 +74,7 @@
         <p class="product-desc">Tactile blue switches for maximum typing feedback and speed.</p>
         <div class="purchase-row">
         <p class="price">KSh 4,500</p>
+
         
         <!-- Assignment 3: Using the onclick attribute -->
         <button class="btn" onclick="addToCart()">Add to Cart</button>
@@ -62,11 +85,14 @@
     </div>
     </main>
 
+       
+
+
     <footer id="contact">
         <p>Reliable tech. Simple shopping.</p>
-        <p>Contact us at info@sokotech.com</p>
+        <p>Contact us at info@campusmarket-kirui.com</p>
         <!-- copyright -->
-        <p>&copy; 2026 SokoTech Marketplace. All rights reserved.</p>
+        <p>&copy; Campus Market-Kirui. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

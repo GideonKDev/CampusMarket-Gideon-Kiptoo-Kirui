@@ -59,6 +59,20 @@ main { margin: 0 auto; max-width: 980px; padding: 76px 28px 90px; }
 .intro h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.05; margin: 12px 0; }
 .intro > p:last-child { color: var(--muted); font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 470px; }
 
+.catalog { margin: 0 auto 30px; max-width: 760px; }
+.catalog-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 18px; }
+.catalog-heading h2 { font-size: 1.85rem; margin: 9px 0 0; }
+.product-count { color: var(--muted); font-family: Arial, sans-serif; font-size: .8rem; margin: 0 0 3px; }
+.product-filters { display: flex; gap: 12px; }
+.search-field, .filter-field { align-items: center; background: #ffffff; border: 1px solid var(--line); border-radius: 7px; display: flex; min-height: 47px; }
+.search-field { color: var(--muted); flex: 1; gap: 9px; padding: 0 14px; }
+.search-field input, .filter-field select { background: transparent; border: 0; color: var(--ink); font-family: Arial, sans-serif; font-size: .88rem; outline: 0; width: 100%; }
+.filter-field { padding: 0 13px; width: 190px; }
+.filter-field select { cursor: pointer; }
+.search-field:focus-within, .filter-field:focus-within { border-color: var(--green); box-shadow: 0 0 0 3px rgba(47, 128, 109, .1); }
+.no-results { background: var(--cream); border: 1px dashed var(--line); color: var(--muted); font-family: Arial, sans-serif; margin: 18px 0 0; padding: 24px; text-align: center; }
+.product-card[hidden] { display: none; }
+
 .product-card {
     background: white;
     border: 1px solid var(--line);
@@ -100,6 +114,9 @@ footer span { color: #9aa8a5; }
     .product-card { grid-template-columns: 1fr; }
     .product-image { min-height: 240px; }
     .product-details { padding: 30px 26px; }
+    .catalog-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .product-filters { flex-direction: column; }
+    .filter-field { width: 100%; }
     footer { align-items: flex-start; flex-direction: column; gap: 8px; }
 }
 img {

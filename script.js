@@ -22,3 +22,24 @@
                 navigation.classList.remove('is-open');
             });
         });
+
+        const searchInput = document.getElementById('product-search');
+        const categoryFilter = document.getElementById('category-filter');
+        const productCard = document.querySelector('.product-card');
+        const productCount = document.getElementById('product-count');
+        const noResults = document.getElementById('no-results');
+
+        function filterProducts() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            const selectedCategory = categoryFilter.value;
+            const matchesSearch = productCard.dataset.productTitle.includes(searchTerm);
+            const matchesCategory = selectedCategory === 'all' || productCard.dataset.productCategory === selectedCategory;
+            const isVisible = matchesSearch && matchesCategory;
+
+            productCard.hidden = !isVisible;
+            noResults.hidden = isVisible;
+            productCount.textContent = isVisible ? '1 product' : '0 products';
+        }
+
+        searchInput.addEventListener('input', filterProducts);
+        categoryFilter.addEventListener('change', filterProducts);
